@@ -13,7 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - name: Download Docker image
         run: |
           docker pull nginx
@@ -31,7 +30,7 @@ jobs:
           ./tmas scan docker:nginx:latest -VMS --saveSBOM > results.json
           
        - name: Upload Json as Artifact
-        uses: actions/upload-artifact@v3
+       - uses: actions/upload-artifact@v3
         with:
           name: generated-json
           path: results.json
