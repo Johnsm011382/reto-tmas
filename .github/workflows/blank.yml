@@ -21,8 +21,8 @@ jobs:
       - name: Login to Docker hub
         uses: docker/login-action@v3
         with:
-            username: ${{ vars.DOCKERHUB_USERNAME}}
-            password: ${{ vars.DOCKERHUB_TOKEN}}
+            username: ${{ vars.DOCKERHUB_USERNAME }}
+            password: ${{ secrets.DOCKERHUB_TOKEN }}
             
       - name: Download Artifact Scanner
         run: |
