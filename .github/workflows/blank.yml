@@ -29,11 +29,11 @@ jobs:
         run: |
           ./tmas scan docker:nginx:latest -VMS --saveSBOM > results.json
 
-          - name: Upload Json
-            uses: actions/upload-artifact@v3
-            with:
-            name: generated-json
-            path: results.json
+        - name: Upload Json
+          uses: actions/upload-artifact@v3
+          with:
+              name: generated-json
+              path: results.json
             
       - name: Checking Vulnerabilities Scan Results
         run: |
