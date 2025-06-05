@@ -1,1 +1,11 @@
-
+vulnerabilities:
+  # This is the full set of supported rule fields:
+  - rule:
+      vulnerability: CVE-2023-6879
+      fixState: fixed
+      package:
+        name: libaom3
+        version: 3.6.0-1+deb12u1
+        type: npm
+        location: "/usr/local/lib/node_modules/**"
+    reason: A descriptor specifying why the override rule implemented
