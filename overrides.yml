@@ -6,6 +6,6 @@ vulnerabilities:
       package:
         name: libaom3
         version: 3.6.0-1+deb12u1
-        type: npm
-        location: "/usr/local/lib/node_modules/**"
+        type: deb
+        location: "/usr/share/doc/libaom3/copyright"
     reason: A descriptor specifying why the override rule implemented
