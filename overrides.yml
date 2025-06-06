@@ -10,6 +10,16 @@ vulnerabilities:
         location: "/usr/share/doc/libaom3/copyright"
     reason: No se puede remediar en el momento
 
+    - rule:
+      vulnerability: CVE-2023-45853
+      fixState: fixed
+      package:
+        name: zlib1g
+        version: 1:1.2.13.dfsg-1
+        type: deb
+        location: "/usr/share/doc/zlib1g/copyright"
+    reason: No se puede remediar en el momento
+
   - rule:
       vulnerability: CVE-2025-48174
       fixState: fixed
@@ -48,14 +58,4 @@ vulnerabilities:
         version: 4.5.0-6+deb12u2
         type: deb
         location: "/usr/share/doc/libtiff6/copyright"
-    reason: No se puede remediar en el momento
-
-  - rule:
-      vulnerability: CVE-2023-45853
-      fixState: not-fixed
-      package:
-        name: zlib1g
-        version: 1:1.2.13.dfsg-1
-        type: deb
-        location: "/var/lib/dpkg/info/zlib1g:amd64.md5sums"
     reason: No se puede remediar en el momento
