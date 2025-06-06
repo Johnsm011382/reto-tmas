@@ -9,8 +9,8 @@ vulnerabilities:
         type: deb
         location: "/usr/share/doc/libaom3/copyright"
     reason: No se puede remediar en el momento
-
-    - rule:
+  
+  - rule:
       vulnerability: CVE-2023-45853
       fixState: fixed
       package:
@@ -19,7 +19,7 @@ vulnerabilities:
         type: deb
         location: "/usr/share/doc/zlib1g/copyright"
     reason: No se puede remediar en el momento
-
+  
   - rule:
       vulnerability: CVE-2025-48174
       fixState: fixed
@@ -29,7 +29,7 @@ vulnerabilities:
         type: deb
         location: "/usr/share/doc/libavif15/copyright"
     reason: No se puede remediar en el momento
-
+  
   - rule:
       vulnerability: CVE-2019-1010022
       fixState: fixed
@@ -39,7 +39,7 @@ vulnerabilities:
         type: deb
         location: "/usr/share/doc/libc-bin/copyright"
     reason: No se puede remediar en el momento
-
+  
   - rule:
       vulnerability: CVE-2019-1010022
       fixState: fixed
@@ -49,7 +49,7 @@ vulnerabilities:
         type: deb
         location: "/usr/share/doc/libc6/copyright"
     reason: No se puede remediar en el momento
-
+  
   - rule:
       vulnerability: CVE-2017-9117
       fixState: fixed
