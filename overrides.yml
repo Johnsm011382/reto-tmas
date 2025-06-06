@@ -8,4 +8,54 @@ vulnerabilities:
         version: 3.6.0-1+deb12u1
         type: deb
         location: "/usr/share/doc/libaom3/copyright"
-    reason: A descriptor specifying why the override rule implemented
+    reason: No se puede remediar en el momento
+
+  - rule:
+      vulnerability: CVE-2025-48174
+      fixState: fixed
+      package:
+        name: libavif15
+        version: 0.11.1-1
+        type: deb
+        location: "/usr/share/doc/libavif15/copyright"
+    reason: No se puede remediar en el momento
+
+  - rule:
+      vulnerability: CVE-2019-1010022
+      fixState: fixed
+      package:
+        name: libc-bin
+        version: 2.36-9+deb12u10
+        type: deb
+        location: "/usr/share/doc/libc-bin/copyright"
+    reason: No se puede remediar en el momento
+
+  - rule:
+      vulnerability: CVE-2019-1010022
+      fixState: fixed
+      package:
+        name: libc6
+        version: 2.36-9+deb12u10
+        type: deb
+        location: "/usr/share/doc/libc6/copyright"
+    reason: No se puede remediar en el momento
+
+  - rule:
+      vulnerability: CVE-2017-9117
+      fixState: fixed
+      package:
+        name: libtiff6
+        version: 4.5.0-6+deb12u2
+        type: deb
+        location: "/usr/share/doc/libtiff6/copyright"
+    reason: No se puede remediar en el momento
+
+  - rule:
+      vulnerability: CVE-2023-45853
+      fixState: fixed
+      package:
+        name: zlib1g
+        version: 1:1.2.13.dfsg-1
+        type: deb
+        location: "/usr/share/doc/zlib1g/copyright"
+    reason: No se puede remediar en el momento
