@@ -50,7 +50,7 @@ jobs:
           
       - name: Push
         run: |
-          docker tag nginx:latest Johnsm011382/reto-tmas/nginx:latest
+          docker tag nginx:latest johnsm1382/johnsm:latest
           docker images
           docker push johnsm1382/johnsm:latest
           
