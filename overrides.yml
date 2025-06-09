@@ -15,7 +15,7 @@ vulnerabilities:
       fixState: fixed
       package:
         name: zlib1g
-        version: 1:1.2.13.dfsg-1
+        version: 1.2.13.dfsg-1
         type: deb
         location: "/usr/share/doc/zlib1g/copyright"
     reason: No se puede remediar en el momento
