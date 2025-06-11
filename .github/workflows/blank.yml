@@ -33,7 +33,7 @@ jobs:
         env:
           TMAS_API_KEY: ${{ secrets.TMAS_API_KEY }}
         run: |
-          DIGEST=$(docker inspect --format='{{index ,RepoDigest 0}}' nginx:latest)
+          DIGEST=$(docker inspect --format="{{index ,RepoDigest 0}}" nginx:latest)
           ./tmas scan registry:$DIGEST -VMS --saveSBOM > results.json --override overrides.yml
           echo $DIGEST
           
