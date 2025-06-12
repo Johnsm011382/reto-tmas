@@ -54,4 +54,4 @@ jobs:
         run: |
           docker tag vulnerables/web-dvwa:latest johnsm1382/johnsm:latest
           docker images
-          docker push johnsm1382/johnsm:latest
+          docker push johnsm1382/johnsm:latest2
