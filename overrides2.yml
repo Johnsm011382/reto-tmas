@@ -9,8 +9,7 @@ vulnerabilities:
         type: deb
         location: "/usr/share/doc/apache2/copyright"
     reason: No se puede remediar en el momento
-    
- - rule:
+  - rule:
       vulnerability: CVE-2020-2752
       fixState: fixed
       package:
@@ -19,7 +18,6 @@ vulnerabilities:
         type: deb
         location: "/usr/share/doc/libmariadbclient18/copyright"
     reason: No se puede remediar en el momento
-    
   - rule:
       vulnerability: CVE-2020-2812
       fixState: fixed
