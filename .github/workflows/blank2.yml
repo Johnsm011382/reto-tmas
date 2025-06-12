@@ -34,7 +34,7 @@ jobs:
           TMAS_API_KEY: ${{ secrets.TMAS_API_KEY }}
         run: |
           DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' vulnerables/web-dvwa:latest)
-          ./tmas scan registry:$DIGEST -VMS --saveSBOM > results.json --override overrides.yml
+          ./tmas scan registry:$DIGEST -VMS --saveSBOM > results.json --override overrides2.yml
           echo $DIGEST
           
       - name: Upload Json
