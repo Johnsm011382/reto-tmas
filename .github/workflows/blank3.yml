@@ -1,0 +1,57 @@
+name: CI
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download Docker image
+        run: |
+          docker pull vulnerables/web-dvwa
+          docker images
+          
+      - name: Login to Docker hub
+        uses: docker/login-action@v3
+        with:
+            username: ${{ vars.DOCKERHUB_USERNAME }}
+            password: ${{ secrets.DOCKERHUB_TOKEN }}
+            
+      - name: Download Artifact Scanner
+        run: |
+          wget https://cli.artifactscan.cloudone.trendmicro.com/tmas-cli/latest/tmas-cli_Linux_x86_64.tar.gz
+          tar -xzvf tmas-cli_Linux_x86_64.tar.gz
+  
+      - name: Image Scanning
+        env:
+          TMAS_API_KEY: ${{ secrets.TMAS_API_KEY }}
+        run: |
+          DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' vulnerables/web-dvwa:latest)
+          ./tmas scan registry:$DIGEST -VMS --saveSBOM > results.json --override overrides2.yml
+          echo $DIGEST
+          
+      - name: Upload Json
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-json
+          path: results.json
+            
+      - name: Checking Vulnerabilities Scan Results
+        run: |
+          cat results.json | jq '.vulnerabilities | { totalVulnCount, criticalCount, highCount, mediumCount, lowCount, negligibleCount, unknownCount } | to_entries | .[] | "\(.key): \(.value)"'
+          cat results.json | jq '.vulnerabilities.criticalCount <= 274 and .vulnerability.highCount < 600 and .vulnerability.mediumCount < 700' | grep -q false && { echo "No se cumple con los criterios de vulnerabilidades. Deteniendo el pipeline."; exit 1; } || echo "Se cumple con los criterios de vulnerabilidades. Continuando con el pipeline."
+          echo Add other actions to build,
+          echo test, and deploy your project.
+          
+      - name: Push
+        run: |
+          docker tag vulnerables/web-dvwa:latest johnsm1382/johnsm:latest
+          docker images
+          docker push johnsm1382/johnsm:latest
