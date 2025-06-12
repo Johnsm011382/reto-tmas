@@ -9,3 +9,21 @@ vulnerabilities:
         type: deb
         location: "/usr/share/doc/apache2/copyright"
     reason: No se puede remediar en el momento
+ - rule:
+      vulnerability: CVE-2020-2752
+      fixState: fixed
+      package:
+        name: libmariadbclient18
+        version: 10.1.26-0+deb9u1
+        type: deb
+        location: "/usr/share/doc/libmariadbclient18/copyright"
+    reason: No se puede remediar en el momento
+  - rule:
+      vulnerability: CVE-2020-2812
+      fixState: fixed
+      package:
+        name: mariadb-server-core-10.1
+        version: 10.1.26-0+deb9u1
+        type: deb
+        location: "/usr/share/doc/mariadb-server-core-10.1/copyright"
+    reason: No se puede remediar en el momento
