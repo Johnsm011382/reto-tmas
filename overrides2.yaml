@@ -1,1 +1,11 @@
-
+vulnerabilities:
+  # This is the full set of supported rule fields:
+  - rule:
+      vulnerability: CVE-2022-23943
+      fixState: fixed
+      package:
+        name: apache2
+        version: 2.4.25-3+deb9u5
+        type: deb
+        location: "/usr/share/doc/apache2/copyright"
+    reason: No se puede remediar en el momento
